@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+    /* COLOR */
+    --background: hsl(0, 19%, 93%);
+    --navbar-background: hsl(0, 13%, 95%); 
+    --shadow: hsla(237, 14%, 73%, 0.452); 
+    --Logo-color: hsl(226, 46%, 51%);
+    --color: #161515;
+    --color-hover-links: hsl(39, 64%, 48%); 
+    --background-responsive: hsla(0, 0%, 100%, 0.1); 
+}
+
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    background-color: #0E0E0E;
+}
+body{
+    font-family: 'Poppins';
+    background-image: url("../image/background-image.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* NAVBAR */
+.navbar{
+    position: sticky;
+    width: 100%;
+    height: auto; 
+    top: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 10px 0 var(--shadow);
+}
+.logo{
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #C8A951;
+}
+.nav-links{
+    height: 100%;
+}
+.nav-links ul{
+    display: flex;
+    justify-content: center;
+}
+.nav-links ul li{
+    padding: 0 17px;
+    font-weight: 600;
+}
+.nav-links ul li a{
+    color: #fff;
+}
+.nav-links ul li a:hover{
+    color: var(--color-hover-links);
+    cursor: pointer;
+}
+.menu-hamburger{
+    position: absolute;
+    width: 27px;
+    height: 25px;
+    top: 1.7em;
+    right: 2em;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bar-menu{
+    width: 100%;
+    height: 4.5px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+@media screen and (max-width: 700px){
+    .menu-hamburger{
+        display: flex;
+    }
+    .nav-links{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: none;
+        justify-content: center;
+        align-content: center;
+        background-color: #0E0E0E;
+        backdrop-filter: blur(50px);
+    }
+    .nav-links.active{
+        display: flex;
+    }
+    .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-links ul li{
+        margin: 25px 0;
+        font-size: 1.2em;
+    }
+    .logo{
+        z-index: 2;
+    }
+}
+
+
+
+
+/*==================== ِEND NAVBAR =====================*/
+
+
+/*==================== HERO SECTION =====================*/
+
+/* ===== HERO SECTION ===== */
+.hero {
+  height: 90vh;
+  width: 100%;
+  background: url("images/banner.png") no-repeat right center;
+  background-size: cover; /* يغطي كامل القسم بدون سكرول */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5%;
+  position: relative;
+  overflow: hidden; /* يمنع أي سكرول زائد */
+}
+
+.hero-text {
+  max-width: 500px;
+  color: #fff;
+  background: none; /* نص ظاهر فوق الخلفية */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero-text h1{
+  font-size: 3em;
+  margin-bottom: 10px;
+  background: none;
+}
+.hero-text p{
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  background: none;
+}
+
+/* ======= RESPONSIVE ======= */
+@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .hero {
+    background-position: top center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    flex-direction: column;
+  }
+  .hero-text {
+    background: none;
+  }
+}
+  .hero-text h1{
+    font-size: 2.2em;
+  }
+  .hero-text p{
+    font-size: 1em;
+  }
+}
+
+/*===================== CALL TO ACTION ===================*/
+.cta {
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  top: -290px;
+  left: 90px;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 17px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+  fill: #C8A951;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: #C8A951;
+  padding-bottom: 20px;
+  background: none;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #C8A951;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* ======= CTA MOBILE ======= */
+@media screen and (max-width: 768px) {
+  .cta {
+    top: -290px !important;   /* إزالة أي رفع كبير كان موجود */
+    left: -70px !important;  /* إعادة الزر للنص الأوسط */
+    display: block;
+    margin: 20px auto 0 auto; /* يجي في النص ويكون مركز */
+  }
+
+  .cta span {
+    font-size: 15px;     /* تصغير الخط شوي للموبايل */
+    letter-spacing: 2px; /* ضبط المسافة بين الحروف */
+    padding-right: 0;    /* إزالة البادينغ الزائد */
+  }
+
+  .cta svg {
+    transform: translateX(0); /* إلغاء التحريك الغريب على الموبايل */
+    fill: #C8A951;
+    background: none;            /* لون السهم يبقى كما هو */
+  }
+
+  .hover-underline-animation:after {
+    height: 2px;
+    bottom: -5px; /* ضبط مكان الخط تحت النص بشكل جميل */
+  }
+}
